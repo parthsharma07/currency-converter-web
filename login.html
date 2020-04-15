@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<style type="text/css">
+		
+		.mainDiv{
+			width: 30%;
+		}
+
+		.formText{
+			font-size: 1.5vw;
+		}
+
+		@media only screen and (max-width: 600px){
+
+			.mainDiv{
+				width: 80%;
+			}
+
+			.formText{
+				font-size: 3.5vw;
+			}
+
+		}
+
+	</style>
+</head>
+<body>
+	<center><div class="mainDiv" style="height: 400px;border-radius: 3px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-top: 10%;">
+		<form>
+			<p style="font-size: 2vw;">Enter Login Details</p>
+			<hr>
+			<p class="formText">Enter Email</p>
+			<input style="width: 70%;height: 50px;border-radius: 5px;font-size: 1.4vw;" type="email" name="email" id="email">
+			<p class="formText">Enter Password</p>
+			<input style="width: 70%;height: 50px;border-radius: 5px;font-size: 1.4vw;" type="password" name="password" id="password">
+			<div style="width: 100%;margin-top: 5%;">
+				<button type="button" onclick="Signup()" style="background-color: green;color: white;width: 30%;height: 40px;">Login</button>
+				<button style="background-color: red;color: white;width: 30%;height: 40px;">Cancel</button>
+			</div>
+		</form>
+	</div></center>
+	<script type="text/javascript">
+		function Signup(){
+			var email = document.getElementById('email').value;
+			var password = document.getElementById('password').value;
+			$.post("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDpF3536aGp_a7PLFfOiFCFikVb98Ort2w",
+			{
+				email: email,
+				password: password,
+				returnSecureToken: true
+			},function(data, status, xhr){
+				localStorage.setItem("id",data.localId);
+				window.location.replace("index.html");
+			},"json").fail(function(xhr, status, error) {
+        		alert("Error Logging in. Try Again");
+    		});
+		}
+	</script>
+</body>
+</html>
