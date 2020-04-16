@@ -102,8 +102,10 @@
 	<script type="text/javascript">
 		window.addEventListener('load', 
   			function() { 
-  				$.get("https://api.exchangeratesapi.io/latest?base=USD",function(data){
-  					var rate = data.rates.INR;
+  				$.get("http://data.fixer.io/api/latest?access_key=abff36b4d4eab3d7eec06cb4716a7e4e&symbols=USD,INR&format=1",function(data){
+  					var dollar = parseFloat(data.rates.USD);
+  					var rupee = parseFloat(data.rates.INR);
+  					var rate = rupee / dollar;
   					document.getElementById('conversionrate').innerHTML = rate;
   				});
     			if(localStorage.getItem("id") !== null){
