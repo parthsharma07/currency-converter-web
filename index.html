@@ -101,17 +101,84 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		window.addEventListener('load', 
-  			function() { 
-  				$.get("http://data.fixer.io/api/latest?access_key=abff36b4d4eab3d7eec06cb4716a7e4e&symbols=USD,INR&format=1",function(data){
-  					var dollar = parseFloat(data.rates.USD);
-  					var rupee = parseFloat(data.rates.INR);
-  					var rate = rupee / dollar;
-  					document.getElementById('conversionrate').innerHTML = rate;
-  				});
-    			if(localStorage.getItem("id") !== null){
-    				document.getElementById('login').innerHTML = "Logout";
-    			}
-  			}, false);
+        function() { 
+          var i = 0;
+          $.get("http://data.fixer.io/api/latest?access_key=abff36b4d4eab3d7eec06cb4716a7e4e&symbols=USD,INR&format=1",function(data){
+            var dollar = parseFloat(data.rates.USD);
+            var rupee = parseFloat(data.rates.INR);
+            var rate = rupee / dollar;
+            document.getElementById('conversionrate').innerHTML = rate;
+          });
+          if(localStorage.getItem("id") !== null){
+            document.getElementById('login').innerHTML = "Logout";
+          }
+          updateRate();
+          function updateRate(){
+            var rateD = parseFloat(document.getElementById('conversionrate').innerHTML);
+            if(i == 0){
+              rateD = rateD + 0.0212345;
+              document.getElementById('conversionrate').innerHTML = rateD;
+              i=1;
+            }
+            else if(i==1){
+              rateD = rateD - 0.0312365;
+              document.getElementById('conversionrate').innerHTML = rateD;
+              i=2;
+            }
+            else if(i==2){
+              rateD = rateD - 0.0152364;
+              document.getElementById('conversionrate').innerHTML = rateD;
+              i=3;
+            }
+            else if(i==3){
+              rateD = rateD + 0.0214789;
+              document.getElementById('conversionrate').innerHTML = rateD;
+              i=4;
+            }
+            else if(i==4){
+              rateD = rateD + 0.0152364;
+              document.getElementById('conversionrate').innerHTML = rateD;
+              i=5;
+            }
+            else if(i==5){
+              rateD = rateD - 0.0212345;
+              document.getElementById('conversionrate').innerHTML = rateD;
+              i=6;
+            }
+
+            else if(i==6){
+              rateD = rateD + 0.0312365;
+              document.getElementById('conversionrate').innerHTML = rateD;
+              i=7;
+            }
+            else if(i==7){
+              rateD = rateD - 0.0214586;
+              document.getElementById('conversionrate').innerHTML = rateD;
+              i=8;
+            }
+            else if(i==8){
+              rateD = rateD + 0.0123659;
+              document.getElementById('conversionrate').innerHTML = rateD;
+              i=9;
+            }
+            else if(i==9){
+              rateD = rateD - 0.0123659;
+              document.getElementById('conversionrate').innerHTML = rateD;
+              i=10;
+            }
+            else if(i==10){
+              rateD = rateD + 0.0214586;
+              document.getElementById('conversionrate').innerHTML = rateD;
+              i=11;
+            }
+            else{
+              rateD = rateD - 0.0214789;
+              document.getElementById('conversionrate').innerHTML = rateD;
+              i=0;
+            }
+            var t = setTimeout(function(){ updateRate() }, 1000);
+          }
+        }, false);
 	</script>
 </head>
 <body>
