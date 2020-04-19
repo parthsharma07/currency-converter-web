@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -15,92 +15,92 @@
   </script>
   <style type="text/css">
 
-  	.convText{
-  		font-size: 1.5vw;
-  	}
+    .convText{
+      font-size: 1.5vw;
+    }
 
-  	.convValue{
-  		font-size: 1.5vw;
-  	}
+    .convValue{
+      font-size: 1.5vw;
+    }
 
-  	.dollarSection{
-  		width: 50%;
-  	}
+    .dollarSection{
+      width: 50%;
+    }
 
-  	.rupeesSection{
-  		width: 50%;
-  	}
+    .rupeesSection{
+      width: 50%;
+    }
 
-  	.rupeeImage{
-  		margin-left: 10%;
-  	}
+    .rupeeImage{
+      margin-left: 10%;
+    }
 
-  	.dollarInput{
-  		width: 60%;
-  	}
+    .dollarInput{
+      width: 60%;
+    }
 
-  	.rupeeInput{
-  		width: 60%;
-  	}
+    .rupeeInput{
+      width: 60%;
+    }
 
-  	.headingPara{
-  		font-size: 2vw;
-  		margin-left: 5%;
-  		margin-top: 2%;
-  	}
+    .headingPara{
+      font-size: 2vw;
+      margin-left: 5%;
+      margin-top: 2%;
+    }
 
-  	.authPara{
-  		font-size: 1.5vw;
-  		margin-right: 5%;
-  		margin-top: 2%;
-  	}
+    .authPara{
+      font-size: 1.5vw;
+      margin-right: 5%;
+      margin-top: 2%;
+    }
 
-  	@media only screen and (max-width: 600px){
-  		.convText{
-  			font-size: 3.5vw;
-  		}
+    @media only screen and (max-width: 600px){
+      .convText{
+        font-size: 3.5vw;
+      }
 
-  		.convValue{
-  			font-size: 3.5vw;
-  		}
+      .convValue{
+        font-size: 3.5vw;
+      }
 
-  		.dollarSection{
-  			width: 100%;
-  		}
+      .dollarSection{
+        width: 100%;
+      }
 
-  		.rupeesSection{
-  			width: 100%;
-  		}
+      .rupeesSection{
+        width: 100%;
+      }
 
-  		.rupeeImage{
-  			margin-left: 15%;
-  		}
+      .rupeeImage{
+        margin-left: 15%;
+      }
 
-  		.dollarInput{
-  			width: 70%;
-  		}
+      .dollarInput{
+        width: 70%;
+      }
 
-  		.rupeeInput{
-  			width: 70%;
-  		}
+      .rupeeInput{
+        width: 70%;
+      }
 
-  		.headingPara{
-  			font-size: 4vw;
-  			margin-left: 15%;
-  			margin-top: 5%;
-  		}
+      .headingPara{
+        font-size: 4vw;
+        margin-left: 15%;
+        margin-top: 5%;
+      }
 
-  		.authPara{
-  			font-size: 2.8vw;
-  			margin-right: 10%;
-  			margin-top: 5%;
-  		}
+      .authPara{
+        font-size: 2.8vw;
+        margin-right: 10%;
+        margin-top: 5%;
+      }
 
-  	}
+    }
   </style>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		window.addEventListener('load', 
+  <script type="text/javascript">
+    window.addEventListener('load', 
         function() { 
           var i = 0;
           $.get("http://data.fixer.io/api/latest?access_key=abff36b4d4eab3d7eec06cb4716a7e4e&symbols=USD,INR&format=1",function(data){
@@ -179,76 +179,76 @@
             var t = setTimeout(function(){ updateRate() }, 1000);
           }
         }, false);
-	</script>
+  </script>
 </head>
 <body>
-	<div style="width: 100%;">
-	<div class="row" style="position: relative;background-color: black;overflow: hidden;">
-		<div style="float: left;height: 10vh;width: 40%;background-color: black;color: white;"><p class="headingPara">Converter App</p></div>
-		<div style="float: right;height: 10vh;width: 60%;background-color: black;color: white;">
-			<p class="authPara" style="float: right;cursor: pointer;" onclick="location.href='signup.html'">Signup</p>
-			<p class="authPara" style="float: right;cursor: pointer;" id="login" onclick="navigate()">LogIn</p>
-		</div>
-	</div>
-	<div class="row" style="position: relative;margin-top: 5%;border-radius: 5px:">
-		<div style="margin-left: 10%;border-radius: 5px;width: 80%;height: 10vh;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-			<p class="convText" style="float: left;margin-top: 1.5%;margin-left: 5%;">Latest INR-USD conversion rate is : </p><p class="convValue" style="margin-top: 1.5%;float: left;margin-left: 2%;" id="conversionrate"></p>
-		</div>
-	</div>
-	<div class="row" style="position: relative;margin-top: 5%;">
-		<div class="dollarSection" style="float: left;">
-			<div style="width: 50%;float: left;">
-				<img style="width: 70%;height: 70%;margin-left: 10%;" src="https://www.todayifoundout.com/wp-content/uploads/2010/02/gold-dollar-sign.jpg">
-			</div>
-			<div style="width: 50%;float: right;">
-				<input class="dollarInput" style="margin-top: 25%;float: left;margin-right: 5%;" type="text" name="" id="dollar" placeholder="Enter amount in dollar">
-			</div>
-		</div>
-		<div class="rupeesSection" style="float: right;">
-			<div style="width: 50%;float: left;">
-				<img class="rupeeImage" style="width: 52%;height: 52%;" src="https://image.shutterstock.com/image-illustration/rupee-currency-golden-icon-3d-260nw-506966392.jpg">
-			</div>
-			<div style="width: 50%;float: right;">
-				<input class="rupeeInput" style="margin-top: 25%;float: left;margin-right: 5%;" type="text" name="" id="rupees" placeholder="Enter amount in rupees">
-			</div>
-		</div>
-	</div>
-	<div class="row" style="position: relative;margin-top: 5%;">
-		<div style="width: 100%;">
-			<center><button onclick="convertFunc()" style="width: 15%;height: 10%;" class="btn btn-success">Convert</button></center>
-		</div>
-	</div>
-	</div>
-	<script type="text/javascript">
-		function convertFunc(){
-			var rate = parseFloat(document.getElementById('conversionrate').innerHTML);
-			var dollar = document.getElementById("dollar").value;
-			var rupees = document.getElementById("rupees").value;
-			if(dollar === "" && rupees === ""){
-				window.alert("please input any one unit");	
-			}
-			if(dollar !== "" && rupees !== ""){
-				window.alert("please input only one unit");	
-			}
-			if(dollar === "" && rupees !== ""){
-				var r = parseFloat(rupees);
-				r = r / rate;
-				document.getElementById("dollar").value = "" + r + " dollars";
-			}
-			if(rupees === "" && dollar !== ""){
-				var d = parseFloat(dollar);
-				d = d * rate;
-				document.getElementById("rupees").value = "" + d + " rupees";
-			}
-		}
-		function navigate(){
-			if(document.getElementById('login').innerHTML === "Login"){
-				location.href="login.html";
-			}else{
-				document.getElementById('login').innerHTML = "Login"
-				localStorage.clear();
-			}
-		}
-	</script>
+  <div style="width: 100%;">
+  <div class="row" style="position: relative;background-color: black;overflow: hidden;">
+    <div style="float: left;height: 10vh;width: 40%;background-color: black;color: white;"><p class="headingPara">Converter App</p></div>
+    <div style="float: right;height: 10vh;width: 60%;background-color: black;color: white;">
+      <p class="authPara" style="float: right;cursor: pointer;" onclick="location.href='signup.html'">Signup</p>
+      <p class="authPara" style="float: right;cursor: pointer;" id="login" onclick="navigate()">LogIn</p>
+    </div>
+  </div>
+  <div class="row" style="position: relative;margin-top: 5%;border-radius: 5px:">
+    <div style="margin-left: 10%;border-radius: 5px;width: 80%;height: 10vh;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+      <p class="convText" style="float: left;margin-top: 1.5%;margin-left: 5%;">Latest INR-USD conversion rate is : </p><p class="convValue" style="margin-top: 1.5%;float: left;margin-left: 2%;" id="conversionrate"></p>
+    </div>
+  </div>
+  <div class="row" style="position: relative;margin-top: 5%;">
+    <div class="dollarSection" style="float: left;">
+      <div style="width: 50%;float: left;">
+        <img style="width: 70%;height: 70%;margin-left: 10%;" src="https://www.todayifoundout.com/wp-content/uploads/2010/02/gold-dollar-sign.jpg">
+      </div>
+      <div style="width: 50%;float: right;">
+        <input class="dollarInput" style="margin-top: 25%;float: left;margin-right: 5%;" type="text" name="" id="dollar" placeholder="Enter amount in dollar">
+      </div>
+    </div>
+    <div class="rupeesSection" style="float: right;">
+      <div style="width: 50%;float: left;">
+        <img class="rupeeImage" style="width: 52%;height: 52%;" src="https://image.shutterstock.com/image-illustration/rupee-currency-golden-icon-3d-260nw-506966392.jpg">
+      </div>
+      <div style="width: 50%;float: right;">
+        <input class="rupeeInput" style="margin-top: 25%;float: left;margin-right: 5%;" type="text" name="" id="rupees" placeholder="Enter amount in rupees">
+      </div>
+    </div>
+  </div>
+  <div class="row" style="position: relative;margin-top: 5%;">
+    <div style="width: 100%;">
+      <center><button onclick="convertFunc()" style="width: 15%;height: 10%;" class="btn btn-success">Convert</button></center>
+    </div>
+  </div>
+  </div>
+  <script type="text/javascript">
+    function convertFunc(){
+      var rate = parseFloat(document.getElementById('conversionrate').innerHTML);
+      var dollar = document.getElementById("dollar").value;
+      var rupees = document.getElementById("rupees").value;
+      if(dollar === "" && rupees === ""){
+        window.alert("please input any one unit");  
+      }
+      if(dollar !== "" && rupees !== ""){
+        window.alert("please input only one unit"); 
+      }
+      if(dollar === "" && rupees !== ""){
+        var r = parseFloat(rupees);
+        r = r / rate;
+        document.getElementById("dollar").value = "" + r + " dollars";
+      }
+      if(rupees === "" && dollar !== ""){
+        var d = parseFloat(dollar);
+        d = d * rate;
+        document.getElementById("rupees").value = "" + d + " rupees";
+      }
+    }
+    function navigate(){
+      if(document.getElementById('login').innerHTML === "Login"){
+        location.href="login.html";
+      }else{
+        document.getElementById('login').innerHTML = "Login"
+        localStorage.clear();
+      }
+    }
+  </script>
 </body>
 </html> 
